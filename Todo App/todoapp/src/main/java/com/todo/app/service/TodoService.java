@@ -18,5 +18,5 @@ public interface TodoService {
 
     TodoDto completeTodo(Long todoId);
 
-    TodoDto uncompleteTodo(Long todoId);
+    TodoDto inCompleteTodo(Long todoId);
 }
