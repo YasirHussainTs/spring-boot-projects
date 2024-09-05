@@ -60,7 +60,7 @@ public class TodoController{
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteTodo(@PathVariable("id") Long todoId){
-        TodoService.deleteTodo(todoId);
+        todoService.deleteTodo(todoId);
         return ResponseEntity.ok("Todo deleted successfully!");
     }
 
