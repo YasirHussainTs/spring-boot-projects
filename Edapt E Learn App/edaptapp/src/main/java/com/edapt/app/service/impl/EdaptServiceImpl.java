@@ -17,18 +17,34 @@ public class EdaptServiceImpl implements EdaptService {
     private EdaptRepository edaptRepository;
 
     @Override
-    public EdaptDto getEdaptById(Long id) {
-        Edapt edapt = edaptRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Edapt not found with id: " + id));
-
-        return EdaptMapper.mapToEdaptDto(edapt);
+    public void createStudent(EdaptDto edaptDto) {
+            Edapt edapt = EdaptMapper.mapToEdapt(edaptDto);
+            edaptRepository.save(edapt);
     }
 
     @Override
-    public List<EdaptDto> getAllEdapt() {
-        List<Edapt> edapts = edaptRepository.findAll();
-                return edapts.stream().map((edapt) -> EdaptMapper.mapToEdaptDto(edapt))
-                        .collect((Collectors.toList()));
+    public EdaptDto getStudentById(Long id) {
+        Edapt updatedEdapt = edaptRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Could not found Id with id " + id));
+        return EdaptMapper.mapToEdaptDto(updatedEdapt);
+    }
 
+    @Override
+    public List<EdaptDto> getAllStudents() {
+        List<Edapt> edapts = edaptRepository.findAll();
+        List<EdaptDto> edaptDtos = edapts.stream()
+                .map((edapt) -> EdaptMapper.mapToEdaptDto(edapt))
+                .collect(Collectors.toList());
+        return edaptDtos;
+    }
+
+    @Override
+    public void updateStudent(EdaptDto edaptDto) {
+        edaptRepository.save(EdaptMapper.mapToEdapt(edaptDto));
+    }
+
+    @Override
+    public void deleteStudent(Long edaptId) {
+        edaptRepository.deleteById(edaptId);
     }
 }

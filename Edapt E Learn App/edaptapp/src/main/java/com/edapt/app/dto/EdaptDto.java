@@ -1,15 +1,14 @@
 package com.edapt.app.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@Data
 public class EdaptDto {
     private Long id;
-    private String name;
+    private String firstName;
+    private String lastName;
+    private String email;
 }

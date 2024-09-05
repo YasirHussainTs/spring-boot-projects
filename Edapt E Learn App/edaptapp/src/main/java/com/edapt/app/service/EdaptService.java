@@ -6,7 +6,13 @@ import java.util.List;
 
 public interface EdaptService {
 
-    EdaptDto getEdaptById(Long id);
+    void createStudent(EdaptDto edaptDto);
 
-    List<EdaptDto> getAllEdapt();
+    EdaptDto getStudentById(Long id);
+
+    List<EdaptDto> getAllStudents();
+
+    void updateStudent(EdaptDto edaptDto);
+
+    void deleteStudent(Long edaptId);
 }
