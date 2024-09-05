@@ -4,9 +4,11 @@ import com.todo.app.dto.LoginDto;
 import com.todo.app.dto.RegisterDto;
 import com.todo.app.entity.Role;
 import com.todo.app.entity.User;
+import com.todo.app.exception.TodoAPIException;
 import com.todo.app.repository.RoleRepository;
 import com.todo.app.repository.UserRepository;
 import com.todo.app.security.JwtTokenProvider;
+
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -33,12 +35,12 @@ public class AuthServiceImpl {
 
         //check username is already exists in DB
         if(userRepository.existsByUsername(registerDto.getUsername())){
-            throw new ToDoAPIException(HttpStatus.BAD_REQUEST, "Username already exists");
+            throw new TodoAPIException(HttpStatus.BAD_REQUEST, "Username already exists");
         }
 
         //check email is already exists in DB
         if(userRepository.existsByEmail(registerDto.getEmail())){
-            throw new ToDoAPIException(HttpStatus.BAD_REQUEST, "Email already exists");
+            throw new TodoAPIException(HttpStatus.BAD_REQUEST, "Email already exists");
         }
 
         User user = new User();
