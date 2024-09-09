@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseToolSources">
+    <data-source name="localhost" uuid="f3a1bc47-486b-4ffe-8f0b-27742dcecbf9" type="MARIADB">
+      <base-info connect-type="DB_DEFAULT" product="MariaDB" version="10.6.18-MariaDB-0ubuntu0.22.04.1" major-version="10" minor-version="6" jdbc-name="MariaDB Connector/J" jdbc-version="3.3.3" jdbc-major-version="3" jdbc-minor-version="3" />
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="adcbbank" operator="@" />
+            <name qname="amazon_db" operator="@" />
+            <name qname="atomichabits_db" operator="@" />
+            <name qname="auth_db" operator="@" />
+            <name qname="bmw_db" operator="@" />
+            <name qname="company" operator="@" />
+            <name qname="contactapp" operator="@" />
+            <name qname="contactapp_db" operator="@" />
+            <name qname="contactinfo" operator="@" />
+            <name qname="edapt_app" operator="@" />
+            <name qname="employee360" operator="@" />
+            <name qname="expense_tacker" operator="@" />
+            <name qname="govGuardianGovOfficialApp" operator="@" />
+            <name qname="govGuardianUserApp" operator="@" />
+            <name qname="mysql" operator="@" />
+            <name qname="noonapp" operator="@" />
+            <name qname="onlineshopping" operator="@" />
+            <name qname="performance_schema" operator="@" />
+            <name qname="role" operator="@" />
+            <name qname="sys" operator="@" />
+            <name qname="test" operator="@" />
+            <name qname="todo_app" operator="@" />
+            <name qname="uaegov" operator="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <choose-schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="employee360" operator="@" />
+          </node>
+        </introspection-scope>
+      </choose-schema-mapping>
+      <url>jdbc:mariadb://localhost:3306/</url>
+      <remarks />
+      <vm-options />
+      <driver-info id="MariaDB" />
+      <ssh-properties enabled="false" />
+      <jdbc-additional-properties>
+        <property name="characterSetResults" value="utf8" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="usePipelineAuth" value="false" />
+        <property name="yearIsDateType" value="false" />
+      </jdbc-additional-properties>
+      <ssl-config enabled="false">
+        <uuid />
+        <caFile />
+        <clientCertificateFile />
+        <clientKeyFile />
+        <sslMode>REQUIRE</sslMode>
+      </ssl-config>
+    </data-source>
+  </component>
+</project>
