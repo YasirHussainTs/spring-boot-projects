@@ -15,6 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
+
+    //Inject the EmployeeService using Constructor Based DI
     private EmployeeService employeeService;
 
     @PostMapping

@@ -15,6 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("api/departments")
 public class DepartmentController{
+
+    //Inject the DepartmentService using Constructor Based DI
     private DepartmentService departmentService;
 
     @PostMapping
