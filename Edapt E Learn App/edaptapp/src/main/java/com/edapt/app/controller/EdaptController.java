@@ -16,7 +16,6 @@ import java.util.List;
 
 @AllArgsConstructor
 @Controller
-@RequestMapping("api/edapt")
 public class EdaptController {
 
     private EdaptService edaptService;
@@ -26,12 +25,12 @@ public class EdaptController {
     public String newStudent(Model model) {
         // student model object to store student form data
         EdaptDto edaptDto = new EdaptDto();
-        model.addAttribute("students", edaptDto);
+        model.addAttribute("student", edaptDto);
         return "create_student";
     }
 
     // Handler method to handle view student request
-    @GetMapping("/student/{studentId}/view")
+    @GetMapping("/students/{studentId}/view")
     public String viewStudent(@PathVariable("studentId") Long studentId,
                               Model model){
         EdaptDto student = edaptService.getStudentById(studentId);
@@ -56,11 +55,11 @@ public class EdaptController {
             return "create_student";
         }
         edaptService.createStudent(student);
-        return "create_student";
+        return "redirect:/students";
     }
 
     // handler method to handle edit student request
-    @GetMapping("/student/{studentId}")
+    @GetMapping("/students/{studentId}")
     public String updateStudent(@PathVariable("studentId") Long studentId,
                                 @Valid @ModelAttribute("student") EdaptDto student,
                                 BindingResult result,
@@ -71,13 +70,13 @@ public class EdaptController {
         }
         student.setId(studentId);
         edaptService.updateStudent(student);
-        return "redirect:/student";
+        return "redirect:/students";
     }
 
     // Handler method to handle delete student request
-    @GetMapping("/student/{studentId}/delete")
+    @GetMapping("/students/{studentId}/delete")
     public String deleteStudent(@PathVariable("studentId") Long studentId) {
         edaptService.deleteStudent(studentId);
-        return "redirect:/student";
+        return "redirect:/students";
     }
 }
