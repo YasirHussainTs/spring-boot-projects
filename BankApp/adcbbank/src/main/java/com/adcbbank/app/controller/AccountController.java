@@ -15,6 +15,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/account")
 public class AccountController {
+
+    //Dependancy Injected
     public AccountService accountService;
 
     @Autowired
@@ -64,6 +66,7 @@ public class AccountController {
     }
 
     //Delete account REST API
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteAccount(@PathVariable Long id){
         accountService.deleteAccount(id);
@@ -71,6 +74,7 @@ public class AccountController {
     }
 
     //Build transfer REST API
+
     @PostMapping("/transfer")
     public ResponseEntity<String> transferTransfer(@RequestBody TransferFundDto transferFundDto){
         accountService.transferFunds(transferFundDto);
@@ -78,6 +82,7 @@ public class AccountController {
     }
 
     //Build Transactions REST API
+
     @GetMapping("/{id}/transactions")
     public ResponseEntity<List<TransactionDto>> fetchAccountTransactions(@PathVariable("id") Long id){
         List<TransactionDto> transactions = accountService.getAccountTransactions(id);
