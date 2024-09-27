@@ -17,8 +17,6 @@ public class ExpenseController {
     //Inject the ExpenseService using Constructor Based DI
     private ExpenseService expenseService;
 
-    // Build Add Expense Tracker REST API
-
     @PostMapping()
     public ResponseEntity<ExpenseDto> createExpense(ExpenseDto expenseDto) {
 
@@ -26,8 +24,6 @@ public class ExpenseController {
 
         return new ResponseEntity<>(savedExpense, HttpStatus.CREATED);
     }
-
-    // Build Get Expense Tracker REST API
 
     @GetMapping("{id}")
     public ResponseEntity<ExpenseDto> getExpenseById(@PathVariable("id") Long expenseId) {
@@ -37,8 +33,6 @@ public class ExpenseController {
         return ResponseEntity.ok(expenseDto);
     }
 
-    // Build Get All Expense Tracker REST API    
-
     @GetMapping()
     public ResponseEntity<List<ExpenseDto>> getAllExpenses() {
 
@@ -47,8 +41,6 @@ public class ExpenseController {
         return ResponseEntity.ok(expenses);
     }
 
-    // Build Update Expense Tracker REST API
-
     @PutMapping("{id}")
     public ResponseEntity<ExpenseDto> updateExpense(@PathVariable("id") Long expenseId, @RequestBody ExpenseDto expenseDto) {
 
@@ -56,8 +48,6 @@ public class ExpenseController {
 
         return ResponseEntity.ok(updatedExpense);
     }
-
-    // Build Delete Expense Tracker REST API
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteExpense(@PathVariable("id") Long expenseId) {
