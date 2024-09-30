@@ -8,8 +8,8 @@
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>net.javaguides</groupId>
-    <artifactId>expense-tracker-app</artifactId>
+    <groupId>com.todo.app</groupId>
+    <artifactId>todo-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>todo-app</name>
     <description>Spring Boot for ToDo App</description>
